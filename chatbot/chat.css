@@ -1,0 +1,344 @@
+/* =========================
+   CHATBOT
+========================= */
+
+.chatbot {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+}
+
+
+/* =========================
+   BOTÓN FLOTANTE
+========================= */
+
+.chatbot-toggle {
+    width: 58px;
+    height: 58px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--acento);
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.chatbot-toggle:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.chatbot-toggle:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   VENTANA
+========================= */
+
+.chatbot-window {
+    position: absolute;
+
+    right: 0;
+    bottom: 72px;
+
+    width: 350px;
+    height: 470px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--superficie);
+    color: inherit;
+
+    border: 1px solid var(--superficie-2);
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(15px)
+        scale(0.97);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+/* Ventana abierta */
+
+.chatbot-window.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================
+   CABECERA
+========================= */
+
+.chatbot-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px;
+
+    background: var(--superficie-2);
+}
+
+.chatbot-header div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.chatbot-header strong {
+    font-size: 1rem;
+}
+
+.chatbot-header small {
+    font-size: 0.75rem;
+
+    opacity: 0.65;
+}
+
+
+/* =========================
+   BOTÓN CERRAR
+========================= */
+
+.chatbot-close {
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-size: 1.6rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: 4px;
+}
+
+.chatbot-close:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.chatbot-messages {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 16px;
+
+    overflow-y: auto;
+}
+
+
+/* Mensaje general */
+
+.chat-message {
+    max-width: 80%;
+
+    padding: 10px 13px;
+
+    border-radius: 14px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.4;
+
+    overflow-wrap: break-word;
+}
+
+
+/* Mensaje del bot */
+
+.chat-message.bot {
+    align-self: flex-start;
+
+    background: var(--superficie-2);
+}
+
+
+/* Mensaje del usuario */
+
+.chat-message.user {
+    align-self: flex-end;
+
+    background: var(--acento);
+
+    color: white;
+}
+
+
+/* =========================
+   ZONA DE ESCRITURA
+========================= */
+
+.chatbot-input-area {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    border-top:
+        1px solid var(--superficie-2);
+}
+
+
+/* Campo */
+
+.chatbot-input-area input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 10px 12px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 10px;
+
+    background: var(--fondo);
+
+    color: inherit;
+
+    font-family: inherit;
+}
+
+
+/* Placeholder */
+
+.chatbot-input-area input::placeholder {
+    opacity: 0.55;
+}
+
+
+/* Botón enviar */
+
+.chatbot-input-area button {
+    width: 42px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--acento);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.chatbot-input-area button:hover {
+    opacity: 0.85;
+}
+
+.chatbot-input-area button:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================
+   BARRA DE DESPLAZAMIENTO
+========================= */
+
+.chatbot-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+    background: var(--secundario);
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 500px) {
+
+    .chatbot {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .chatbot-window {
+        width: calc(100vw - 30px);
+
+        height: 65vh;
+
+        bottom: 70px;
+    }
+
+    .chatbot-toggle {
+        width: 54px;
+        height: 54px;
+    }
+}
+
+
+/* =========================
+   ACCESIBILIDAD
+========================= */
+
+.chatbot button:focus-visible,
+.chatbot input:focus-visible {
+    outline: 2px solid var(--acento);
+
+    outline-offset: 2px;
+}

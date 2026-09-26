@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Bienvenida al portafolio personal de Juan Daniel Falcones Suango"
+    >
+
+    <link
+        rel="stylesheet"
+        href="bienvenida.css"
+    >
+
+    <title>Bienvenido</title>
+
+</head>
+
+
+<body>
+
+    <main class="welcome">
+
+        <section class="welcome-card">
+
+            <p class="welcome-label">
+                PORTAFOLIO
+            </p>
+
+            <h1>
+                Bienvenido
+            </h1>
+
+            <p>
+                Antes de comenzar, dime cómo te gustaría
+                que te salude.
+            </p>
+
+
+            <form id="welcome-form">
+
+                <label for="username">
+                    Tu nombre
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Escribe tu nombre"
+                    autocomplete="given-name"
+                    required
+                    maxlength="40"
+                >
+
+                <button type="submit">
+                    Entrar
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="bienvenida.js"></script>
+
+</body>
+
+</html>

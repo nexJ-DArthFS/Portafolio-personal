@@ -8,12 +8,26 @@
   name="description"
   content="Portafolio personal interactivo" />
 <meta name="color-scheme" content="light dark" />
-<link rel="stylesheet" href="index.css" />
+<link rel="stylesheet" href="portafolio.css" />
+<link rel="stylesheet" href="chatbot/chat.css" />
 <title> Portafolio de Juan Daniel Falcones Suango </title>
 </head>
+
 <body>
-  <header>
-    <h1>Hola, soy Juan Daniel Falcones Suango</h1>
+
+  <nav>
+  <header class="header">
+
+  
+  <div class="title-container">
+    <h1>Hola soy Juan Daniel Falcones Suango</h1>
+      <img
+        src="assets/foto-perfil.jpeg"
+        alt="Foto de Juan Daniel Falcones Suango"
+        class="foto-perfil"
+    ></div> 
+    <!-- seccion de navegacion con conenedor -->
+     <div class="navegador">
   <ul>
       <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#aspiraciones">Aspiraciones</a></li> 
@@ -21,7 +35,7 @@
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#contacto">Contacto</a></li>
   </ul>
-    
+</div>
   </nav>
   </header>
     <main class="container">
@@ -36,7 +50,7 @@
  
   <section class="skills" id="habilidades">
       <h2>Habilidades</h2>
-      <ul1>
+      <ul class="skills-list">
         <li> <div class="skill-info"></div>
           <span>HTML5</span>
           <span> 70% </span>
@@ -72,7 +86,7 @@
             <div class="progress" style="width: 85%;"></div>
           </div>
         </li>
-      </ul1>
+      </ul>
   </section>
     
     <section id="proyectos">
@@ -135,13 +149,78 @@
   </section>
     </main>
  
+<div class="chatbot">
+
+
+    <button
+        id="chatbot-toggle"
+        class="chatbot-toggle"
+        aria-label="Abrir asistente"
+        aria-expanded="false"
+    >
+        <span>AI</span>
+    </button>
+
+    <section
+        id="chatbot-window"
+        class="chatbot-window"
+        aria-hidden="true"
+    >
+
+        <header class="chatbot-header">
+            <div>
+                <strong>Asistente</strong>
+                <small>Portafolio personal</small>
+            </div>
+
+            <button
+                id="chatbot-close"
+                class="chatbot-close"
+                aria-label="Cerrar asistente"
+            >
+                
+            </button>
+        </header>
+
+        <div
+            id="chatbot-messages"
+            class="chatbot-messages"
+            aria-live="polite"
+        >
+            <div class="chat-message bot">
+                Hola. ¿Qué quieres conocer sobre el portafolio?
+            </div>
+        </div>
+
+        <form id="chatbot-form" class="chatbot-input-area">
+
+            <input
+                id="chatbot-input"
+                type="text"
+                placeholder="Escribe un mensaje..."
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit" aria-label="Enviar mensaje">
+                →
+            </button>
+
+        </form>
+
+    </section>
+
+</div>
+
   <footer>
     <ul>
      <li><a href="https://www.linkedin.com/in/juan-daniel-falcones-suango">Linkedin</a></li>
-      <li><a href="#proyectos">Github</a></li>
-      <li><a href="#contacto">WhatsApp</a></li>
+      <li><a href="https://github.com/nexJ-DArthFS">Github</a></li>
+      <li><a href="https://wa.me/593997223830">WhatsApp</a></li>
     </ul>
- <p>&copy; 2026 Portafolio de Juan Daniel Falcones Suango. Todos los derechos reservados.</>
+ <p>&copy; 2026 Portafolio de Juan Daniel Falcones Suango. Todos los derechos reservados.</p>
     </footer>
+    <script src="portafolio.js"></script>
+    <script src="chatbot/chat.js"></script>
   </body>
 </html>

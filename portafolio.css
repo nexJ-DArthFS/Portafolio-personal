@@ -1,0 +1,329 @@
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Valores normales = tema claro */
+
+    body {
+        --fondo: #f6f4fb;
+        --superficie: #e6e6e6;
+        --texto: #171111;
+        --borde: #423f3f;
+        --acento: #33634e;
+    }
+
+
+    /* Solo sobrescribimos variables cuando es oscuro */
+
+    body.tema-oscuro {
+        --fondo: #090b11;
+        --superficie: #131722;
+        --texto: #ffffff;
+        --borde: #2b3240;
+        --acento: #396352;
+    }
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        background-color: var(--fondo);
+        color: var(--texto);
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+    }
+
+
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        padding: 15px 30px;
+        background-color: var(--cabecera);
+        color: var(--texto);
+        border-bottom: 2px solid var(--borde);
+        box-shadow: var(--sombra);
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+    }
+
+
+    .foto-perfil {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+
+        border-radius: 50%;
+
+        border: 2px solid var(--acento);
+    }
+
+    .title-container {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .title-container h1 {
+        font-size: 210%;
+        margin: 0;
+    }
+
+    .title-container img {
+        width: 20%;
+        height: auto;
+
+    }
+
+
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+
+    .navegador ul {
+        flex-direction: row;
+        gap: 25px;
+        align-items: center;
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+    }
+
+    .intro {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    #proyectos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .intro {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    #sobre-mi,
+    #aspiraciones,
+    .project,
+    #contacto {
+        background-color: var(--superficie);
+        color: var(--texto);
+        border: 9px solid var(--borde);
+        box-shadow: var(--sombra);
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            border-color 0.3s ease;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    #sobre-mi,
+    #aspiraciones {
+        border: 56px solid var(--principal);
+        background: var(--superficie);
+        gap: 0px;
+        padding: 0px;
+        border-radius: 12px;
+        text-align: justify;
+    }
+
+    #sobre-mi,
+    #aspiraciones h2 {
+        padding: 10px
+    }
+
+    #aspiraciones p {
+        padding: 10px;
+    }
+
+
+
+    section.skills#habilidades {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        align-items: flex;
+        list-style: none;
+    }
+
+    .skills h2 {
+        text-align: center;
+    }
+
+
+
+    .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    text-align: justify;
+}
+    
+
+    .skills li {
+        padding: 25px;
+        background-color: var(--superficie);
+        border: 1px solid var(--borde);
+        border-radius: 10px;
+        color: var(--texto);
+    }
+
+    .skill-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 10px;
+        background: var(--superficie-2);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        background: var(--acento);
+        border-radius: inherit;
+    }
+
+    #proyectos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    #proyectos>h2 {
+        grid-column: 1/ -1;
+        text-align: center;
+    }
+
+    .project {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+    }
+
+    .project details {
+        width: 100%;
+    }
+
+    .project summary {
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    #contacto {
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 12px;
+    }
+
+    #contacto h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #contacto>p {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    #contacto form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        background-color: var(--superficie-2);
+        color: var(--texto);
+        border: 1px solid var(--borde);
+        border-radius: 8px;
+        font: inherit;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+    }
+
+    #contacto button {
+        padding: 12px;
+        background-color: var(--acento);
+        color: var(--texto-boton);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    #contacto button:hover {
+        opacity: 0.85;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: var(--superficie);
+        color: var(--texto);
+        border-top: 2px solid var(--borde);
+    }
+
+    footer ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    @media (max-width: 700px) {
+        header {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        nav {
+            flex-direction: column;
+            gap: 8px;
+        }
+    }
