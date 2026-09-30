@@ -1,21 +1,16 @@
 {
   "name": "juan_falcones",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portafolio personal",
   "main": "portafolio.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nexJ-DArthFS/Portafolio-personal.git"
+  "type": "module",
+  "devDependencies": {
+    "vite": "^8.3.1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/nexJ-DArthFS/Portafolio-personal/issues"
-  },
-  "homepage": "https://github.com/nexJ-DArthFS/Portafolio-personal#readme"
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1"
+  }
 }

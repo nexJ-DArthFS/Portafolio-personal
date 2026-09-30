@@ -200,65 +200,6 @@ detallesProyectos.forEach(function (detalle) {
 });
 
 
-// ============================================================
-// 6. VALIDACIÓN DEL FORMULARIO
-// ============================================================
-
-// Buscamos el formulario de contacto.
-
-const formulario = document.querySelector("#contacto form");
-
-
-// Comprobamos que el formulario exista.
-
-if (formulario) {
-
-    // Escuchamos el evento "submit".
-
-    formulario.addEventListener("submit", function (evento) {
-
-        // Evitamos que el formulario se envíe inmediatamente.
-        // Esto permite realizar nuestra validación primero.
-
-        evento.preventDefault();
-
-
-        // Obtenemos los valores introducidos por el usuario.
-
-        const nombre = document.querySelector("#nombre").value.trim();
-
-        const email = document.querySelector("#email").value.trim();
-
-        const mensaje = document.querySelector("#mensaje").value.trim();
-
-
-        // Comprobamos que los campos principales tengan información.
-
-        if (nombre === "" || email === "" || mensaje === "") {
-
-            alert("Por favor, completa todos los campos obligatorios.");
-
-            return;
-
-        }
-
-
-        // Si todo está correcto mostramos un mensaje.
-
-        alert(`Gracias ${nombre}. Tu mensaje ha sido preparado correctamente.`);
-
-
-        // Mostramos los datos en consola para practicar JavaScript.
-
-        console.log("Nombre:", nombre);
-
-        console.log("Correo:", email);
-
-        console.log("Mensaje:", mensaje);
-
-    });
-
-}
 
 
 // ============================================================
@@ -371,3 +312,5 @@ portafolio.tecnologias.forEach(function (tecnologia) {
 // ============================================================
 
 console.log("JavaScript está funcionando correctamente.");
+
+
